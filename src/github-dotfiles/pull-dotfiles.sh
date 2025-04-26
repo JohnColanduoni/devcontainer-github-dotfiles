@@ -2,12 +2,17 @@
 
 set -exo pipefail
 
-CHECKOUT_PATH=/workspaces/.codespaces/.persistedshare/dotfiles
+CHECKOUT_PATH=/workspaces/.codespaces-ish/.persistedshare/dotfiles
 install_script_options=("install.sh" "install" "bootstrap.sh" "script/bootstrap" "setup.sh" "setup" "script/setup")
 
 # Fix volume permissions
 if [ "$(id -u)" != "0" ]; then
     sudo chown -R "$USER:$USER" "$CHECKOUT_PATH"
+fi
+
+if [ "$CODESPACES" = "true" ]; then
+    echo "inside GitHub Codespace, skipping dotfiles installation" >&2
+    exit 0
 fi
 
 if [ ! -d "$CHECKOUT_PATH/.git" ]; then

@@ -9,7 +9,7 @@
 		{
 			"type": "volume",
 			"source": "github-dotfiles-${devcontainerId}",
-			"target": "/workspaces/.codespaces/.persistedshare/dotfiles"
+			"target": "/workspaces/.codespaces-ish/.persistedshare/dotfiles"
 		}
 	]
 }
