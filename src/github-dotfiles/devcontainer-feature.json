@@ -1,0 +1,15 @@
+{
+	"id": "github-dotfiles",
+	"version": "0.1.0",
+	"name": "GitHub Dotfiles",
+	"postCreateCommand": {
+		"pull-github-dotfiles": "/usr/local/bin/pull-dotfiles.sh"
+	},
+	"mounts": [
+		{
+			"type": "volume",
+			"source": "github-dotfiles-${devcontainerId}",
+			"target": "/workspaces/.codespaces/.persistedshare/dotfiles"
+		}
+	]
+}
