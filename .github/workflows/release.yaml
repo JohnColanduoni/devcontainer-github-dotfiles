@@ -16,7 +16,7 @@ jobs:
         uses: devcontainers/action@v1
         with:
           publish-features: "true"
-          base-path-to-templates: "./src"
+          base-path-to-features: "./src"
           devcontainer-cli-version: "0.76.0"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
